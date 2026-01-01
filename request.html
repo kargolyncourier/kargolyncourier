@@ -141,15 +141,42 @@
     <div class="form-wrapper">
       <form id="pickupForm" action="https://formspree.io/f/xykzzlpp" method="POST">
         <h3>Sender Details</h3>
-        <div class="form-group"><label>Full Name</label><input type="text" name="fullName" required></div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" name="phoneNumber" required></div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="senderFullName" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="senderPhoneNumber" required>
+        </div>
+        <div class="form-group">
+          <label>ID Number</label>
+          <input type="text" name="senderID" required>
+        </div>
 
         <h3>Pickup Details</h3>
-        <div class="form-group"><label>Pickup Location</label><input type="text" name="pickupLocation" required></div>
+        <div class="form-group">
+          <label>Pickup Location</label>
+          <input type="text" name="pickupLocation" required>
+        </div>
 
         <h3>Drop-off Details</h3>
-        <div class="form-group"><label>Recipient Name</label><input type="text" name="recipientName" required></div>
-        <div class="form-group"><label>Drop-off Location</label><input type="text" name="dropoffLocation" required></div>
+        <div class="form-group">
+          <label>Recipient Name</label>
+          <input type="text" name="recipientName" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="recipientPhoneNumber" required>
+        </div>
+        <div class="form-group">
+          <label>ID Number</label>
+          <input type="text" name="recipientID" required>
+        </div>
+        <div class="form-group">
+          <label>Drop-off Location</label>
+          <input type="text" name="dropoffLocation" required>
+        </div>
 
         <h3>Parcel Info</h3>
         <div class="form-group">
@@ -206,6 +233,7 @@
 
 </body>
 </html>
+
 
 
 

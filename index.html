@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kargolyn Courier | Fast & Reliable Delivery in Kenya</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      overflow: hidden; /* prevent flash before loader */
+    }
+
+    /* ================= LOADER ================= */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #6f42c1;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #ffc107;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: #6f42c1;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+    /* ================= STATS ================= */
+.stats{
+  background:#6f42c1;
+  color:#fff;
+  padding:60px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+.stats-box h2{
+  font-size:48px;
+  margin-bottom:10px;
+  color:#ffc107;
+}
+
+.stats-box p{
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:0.5px;
+}
+
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      background: linear-gradient(rgba(111, 66, 193, 0.8), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffc107;
+      color: #000;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: #f4f4f4;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .service-box h3 {
+      margin-bottom: 15px;
+      color: #6f42c1;
+    }
+
+    /* ================= ABOUT ================= */
+    .about {
+      background: #fafafa;
+    }
+
+    /* ================= CTA ================= */
+    .cta {
+      background: #6f42c1;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 20px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    /* ================= FOOTER ================= */
+.footer{
+  background:#222;
+  color:#ddd;
+  padding:50px 20px 20px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.footer-box h3,
+.footer-box h4{
+  color:#ffc107;
+  margin-bottom:15px;
+}
+
+.footer-box p{
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.footer-box a{
+  color:#ddd;
+  text-decoration:none;
+}
+
+.footer-box a:hover{
+  color:#ffc107;
+}
+
+.footer-bottom{
+  border-top:1px solid #444;
+  margin-top:30px;
+  padding-top:15px;
+  text-align:center;
+  font-size:13px;
+}
+/* ===== LOGO ===== */
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:45px;          /* adjust if needed */
+  width:auto;
+  object-fit:contain;
+}
+
+
+
+    footer p {
+      font-size: 14px;
+    }
+  </style>
+
+  <script>
+    window.addEventListener("load", function () {
+      document.body.style.overflow = "auto";
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Kargolyn Courier...</p>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+  <img src="images/KARGOLYN-removebg-preview.png" alt="Kargolyn Courier Logo">
+  <span style="margin-left:10px; font-weight:bold;">Kargolyn Courier</span>
+</div>
+
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="request.html">Request Pickup</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Fast & Reliable Courier Services in Kenya</h2>
+      <p>
+        We deliver parcels, documents, and goods safely across Nairobi
+        and nationwide — on time, every time.
+      </p>
+      <a href="request.html" class="btn">Request Delivery</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px;">Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Same-Day Delivery</h3>
+        <p>Fast deliveries within Nairobi and nearby towns.</p>
+      </div>
+      <div class="service-box">
+        <h3>Nationwide Courier</h3>
+        <p>Reliable delivery to all major towns in Kenya.</p>
+      </div>
+      <div class="service-box">
+        <h3>Document Courier</h3>
+        <p>Secure handling of important documents.</p>
+      </div>
+      <div class="service-box">
+        <h3>E-commerce Logistics</h3>
+        <p>Affordable delivery solutions for online businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2 style="text-align:center; margin-bottom:30px;">About Kargolyn</h2>
+    <p style="max-width:800px; margin:auto; text-align:center;">
+      Kargolyn Courier is a Kenyan-owned company committed to providing
+      fast, affordable, and dependable courier services across the country.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <h2>Need a Courier Today?</h2>
+    <p>Call us or request a pickup and we’ll handle the rest.</p>
+    <br />
+    <a href="tel:+254113226979" class="btn">Call Now</a>
+  </section>
+<!-- EXPERIENCE STATS -->
+<section class="stats">
+  <div class="stats-box">
+    <h2><span class="counter" data-target="5">0</span>+</h2>
+    <p>Years of Reliable Service</p>
+  </div>
+
+  <div class="stats-box">
+    <h2><span class="counter" data-target="3000">0</span>+</h2>
+    <p>Parcels Successfully Delivered</p>
+  </div>
+
+  <div class="stats-box">
+    <h2><span class="counter" data-target="47">0</span>+</h2>
+    <p>Towns Covered Across Kenya</p>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>Kargolyn Courier</h3>
+      <p>Fast, reliable & affordable courier services across Kenya.</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p>📞 Phone: <a href="tel:+254700000000">+254 113 226 979</a></p>
+      <p>📧 Email: <a href="mailto:info@kargolyncourier.co.ke">info@kargolyncourier@gmail.com</a></p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Our Office</h4>
+      <p>📍 Nairobi, Kenya</p>
+      <p>🕘 Mon – Sat: 8:00 AM – 6:00 PM</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Kargolyn Courier. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+    const speed = target / 100;
+
+    const updateCount = () => {
+      if(count < target){
+        count += speed;
+        counter.innerText = Math.ceil(count);
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+});
+</script>
+
+</body>
+</html>

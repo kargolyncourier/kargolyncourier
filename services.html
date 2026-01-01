@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Kargolyn Courier</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      color:#333;
+      line-height:1.6;
+      background:#f9f9f9;
+      overflow:hidden; /* prevent flash before loader */
+    }
+
+    /* ================= LOADER ================= */
+    #loader{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:#6f42c1;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      transition:opacity 0.5s ease;
+    }
+
+    .spinner{
+      width:60px;
+      height:60px;
+      border:6px solid rgba(255,255,255,0.3);
+      border-top:6px solid #ffc107;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+      margin-bottom:15px;
+    }
+
+    @keyframes spin{
+      0%{transform:rotate(0deg);}
+      100%{transform:rotate(360deg);}
+    }
+
+    /* ================= HEADER ================= */
+    header{
+      background:#6f42c1;
+      color:#fff;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1{
+      font-size:24px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+    }
+
+    /* ================= HERO ================= */
+    .page-hero{
+      background:linear-gradient(rgba(111,66,193,0.8), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      text-align:center;
+      padding:80px 20px;
+    }
+
+    .page-hero h2{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    section{
+      padding:60px 40px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* ================= SERVICES ================= */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:30px;
+    }
+
+    .service-card{
+      background:#fff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .service-card h3{
+      color:#6f42c1;
+      margin-bottom:15px;
+    }
+
+    .service-card ul{
+      padding-left:20px;
+    }
+
+    .service-card ul li{
+      margin-bottom:8px;
+    }
+
+    /* ================= CTA ================= */
+    .cta{
+      background:#6f42c1;
+      color:#fff;
+      text-align:center;
+      padding:60px 20px;
+    }
+
+    .cta a{
+      display:inline-block;
+      margin-top:20px;
+      background:#ffc107;
+      color:#000;
+      padding:12px 25px;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:5px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      background:#222;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+    }
+    /* ===== LOGO ===== */
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:45px;          /* adjust if needed */
+  width:auto;
+  object-fit:contain;
+}
+
+  </style>
+
+  <script>
+    window.addEventListener("load", function () {
+      document.body.style.overflow = "auto";
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Kargolyn Courier...</p>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+  <img src="images/KARGOLYN-removebg-preview.png" alt="Kargolyn Courier Logo">
+  <span style="margin-left:10px; font-weight:bold;">Kargolyn Courier</span>
+</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="request.html">Request Pickup</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <h2>Our Courier Services</h2>
+    <p>Reliable, fast, and affordable delivery solutions across Kenya</p>
+  </div>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Same-Day Delivery</h3>
+        <p>Urgent deliveries within Nairobi and surrounding areas.</p>
+        <ul>
+          <li>Documents & parcels</li>
+          <li>Business & personal deliveries</li>
+          <li>Fast turnaround time</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Nationwide Courier</h3>
+        <p>We deliver parcels to all major towns in Kenya.</p>
+        <ul>
+          <li>Door-to-door delivery</li>
+          <li>Affordable rates</li>
+          <li>Safe parcel handling</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Document Courier</h3>
+        <p>Secure delivery for sensitive and important documents.</p>
+        <ul>
+          <li>Legal documents</li>
+          <li>Office paperwork</li>
+          <li>Confidential handling</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>E-commerce & Business Logistics</h3>
+        <p>Perfect for online sellers and growing businesses.</p>
+        <ul>
+          <li>Cash on delivery (COD)</li>
+          <li>Bulk deliveries</li>
+          <li>Customer notifications</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Fragile & Special Items</h3>
+        <p>Extra care for delicate and valuable parcels.</p>
+        <ul>
+          <li>Electronics</li>
+          <li>Glass & fragile goods</li>
+          <li>Handled with care</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Scheduled Pickups</h3>
+        <p>Plan regular pickups for your business or office.</p>
+        <ul>
+          <li>Daily / weekly schedules</li>
+          <li>Dedicated rider</li>
+          <li>Reliable service</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to Send a Parcel?</h2>
+    <p>Request a pickup today and let us handle the delivery.</p>
+    <a href="request.html">Request Pickup</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kargolyn Courier. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

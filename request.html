@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kargolyn Courier | Kenyan Courier Services</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      line-height:1.6;
+      color:#333;
+      background:#f9f9f9;
+    }
+
+    /* ===== LOADER ===== */
+    #loader{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:#6f42c1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      z-index:9999;
+      color:#fff;
+    }
+
+    .spinner{
+      width:50px;
+      height:50px;
+      border:5px solid rgba(255,255,255,0.3);
+      border-top:5px solid #fff;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+      margin-bottom:15px;
+    }
+
+    @keyframes spin{
+      to{ transform:rotate(360deg); }
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      background:#6f42c1;
+      color:#fff;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      background:linear-gradient(rgba(111,66,193,0.85), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      height:80vh;
+      display:flex;
+      align-items:center;
+      padding:40px;
+    }
+
+    .hero h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      background:#ffc107;
+      color:#000;
+      padding:12px 25px;
+      border-radius:5px;
+      text-decoration:none;
+      font-weight:bold;
+      display:inline-block;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ffb300;
+    }
+
+    section{
+      padding:60px 40px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* ===== SERVICES ===== */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .service-box{
+      background:#fff;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+
+    .service-box h3{
+      color:#6f42c1;
+      margin-bottom:15px;
+    }
+
+    /* ===== FORM ===== */
+    .form-wrapper{
+      background:#fff;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .form-wrapper h3{
+      color:#6f42c1;
+      margin-bottom:15px;
+      margin-top:30px;
+    }
+
+    .form-group{
+      margin-bottom:15px;
+    }
+
+    .form-group label{
+      font-weight:bold;
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+      padding:12px;
+      border-radius:6px;
+      border:1px solid #ccc;
+      transition:0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      outline:none;
+      border-color:#6f42c1;
+      box-shadow:0 0 0 2px rgba(111,66,193,0.2);
+    }
+
+    .submit-btn{
+      width:100%;
+      background:#6f42c1;
+      color:#fff;
+      border:none;
+      padding:14px;
+      font-size:16px;
+      border-radius:6px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .submit-btn:hover{
+      background:#59339d;
+    }
+
+    /* ===== CTA ===== */
+    .cta{
+      background:#6f42c1;
+      color:#fff;
+      text-align:center;
+      padding:60px 20px;
+    }
+    /* ===== ALL COUNTIES BRANCH SCROLLER ===== */
+/* ===== WELLS FARGO STYLE BRANCH SCROLLER ===== */
+.branches-section{
+  background:#fff;
+  padding:60px 40px;
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.branches-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.branches-header h2{
+  font-size:22px;
+  color:#222;
+}
+
+.branches-header span{
+  font-size:14px;
+  color:#6f42c1;
+  font-weight:bold;
+}
+
+.branches-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:10px;
+}
+
+.branches-scroll::-webkit-scrollbar{
+  height:6px;
+}
+
+.branches-scroll::-webkit-scrollbar-thumb{
+  background:#ccc;
+  border-radius:10px;
+}
+
+/* Branch Item */
+.branch-item{
+  min-width:200px;
+  padding:18px 20px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  background:#fff;
+  flex-shrink:0;
+  transition:0.2s;
+}
+
+.branch-item:hover{
+  border-color:#6f42c1;
+  background:#faf7ff;
+}
+
+.branch-item h4{
+  font-size:15px;
+  margin-bottom:6px;
+  color:#222;
+}
+
+.branch-item p{
+  font-size:13px;
+  color:#666;
+}
+/* ===== LOGO ===== */
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:45px;          /* adjust if needed */
+  width:auto;
+  object-fit:contain;
+}
+
+
+    footer{
+      background:#222;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="spinner"></div>
+  <p>Loading Kargolyn Courier...</p>
+</div>
+
+<header>
+  <div class="logo">
+  <img src="images/KARGOLYN-removebg-preview.png" alt="Kargolyn Courier Logo">
+  <span style="margin-left:10px; font-weight:bold;">Kargolyn Courier</span>
+</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="request.html">Request Pickup</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Fast & Reliable Courier Services in Kenya</h2>
+    <p>Safe parcel delivery across Nairobi & nationwide — on time, every time.</p>
+    <a href="request.html" class="btn">Request Pickup</a>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:40px;">Our Services</h2>
+  <div class="services">
+    <div class="service-box"><h3>Same-Day Delivery</h3><p>Fast Nairobi deliveries.</p></div>
+    <div class="service-box"><h3>Nationwide Courier</h3><p>All major towns in Kenya.</p></div>
+    <div class="service-box"><h3>Document Courier</h3><p>Secure document handling.</p></div>
+    <div class="service-box"><h3>E-commerce Logistics</h3><p>Perfect for online sellers.</p></div>
+  </div>
+</section>
+<section class="branches-section">
+
+  <div class="branches-header">
+    <h2>Our Pick-up and drop-off areas Across Kenya</h2>
+    <span>47 Counties</span>
+  </div>
+
+  <div class="branches-scroll">
+
+    <!-- Nairobi -->
+    <div class="branch-item">
+      <h4>Nairobi County</h4>
+      <p>Main Operations Hub</p>
+    </div>
+
+    <!-- Central -->
+    <div class="branch-item"><h4>Kiambu County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Murang'a County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Nyeri County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kirinyaga County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Nyandarua County</h4><p>Service Point</p></div>
+
+    <!-- Rift Valley -->
+    <div class="branch-item"><h4>Nakuru County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Uasin Gishu County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kericho County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Bomet County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Nandi County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Narok County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kajiado County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Laikipia County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Turkana County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Samburu County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>West Pokot County</h4><p>Service Point</p></div>
+
+    <!-- Western -->
+    <div class="branch-item"><h4>Kakamega County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Bungoma County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Busia County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Vihiga County</h4><p>Service Point</p></div>
+
+    <!-- Nyanza -->
+    <div class="branch-item"><h4>Kisumu County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Siaya County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Homa Bay County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Migori County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kisii County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Nyamira County</h4><p>Service Point</p></div>
+
+    <!-- Eastern -->
+    <div class="branch-item"><h4>Machakos County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Makueni County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kitui County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Meru County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Embu County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Tharaka-Nithi County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Isiolo County</h4><p>Service Point</p></div>
+
+    <!-- Coast -->
+    <div class="branch-item"><h4>Mombasa County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kilifi County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Kwale County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Tana River County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Lamu County</h4><p>Service Point</p></div>
+
+    <!-- North Eastern -->
+    <div class="branch-item"><h4>Garissa County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Wajir County</h4><p>Service Point</p></div>
+    <div class="branch-item"><h4>Mandera County</h4><p>Service Point</p></div>
+
+  </div>
+</section>
+
+
+<section id="contact">
+  <h2 style="text-align:center;margin-bottom:30px;">Request Parcel Pickup</h2>
+
+  <div class="form-wrapper">
+    <form id="pickupForm">
+
+      <h3>Sender Details</h3>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" required>
+      </div>
+
+      <h3>Pickup Details</h3>
+      <div class="form-group">
+        <label>Pickup Location</label>
+        <input type="text" required>
+      </div>
+
+      <h3>Drop-off Details</h3>
+      <div class="form-group">
+        <label>Recipient Name</label>
+        <input type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label>Drop-off Location</label>
+        <input type="text" required>
+      </div>
+
+      <h3>Parcel Info</h3>
+      <div class="form-group">
+        <label>Parcel Type</label>
+        <select required>
+          <option value="">Select</option>
+          <option>Documents</option>
+          <option>Small Package</option>
+          <option>Fragile Item</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">
+  Confirm & Submit Pickup Request
+</button>
+
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Kargolyn Courier. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.addEventListener("load", function(){
+    document.getElementById("loader").style.display="none";
+  });
+</script>
+
+
+
+<!-- PRICE CONFIRMATION MODAL -->
+<div id="priceModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10000;">
+
+  <div style="background:#fff; max-width:500px; margin:10% auto; padding:30px; border-radius:12px;">
+    <h2 style="color:#6f42c1; margin-bottom:15px;">Confirm Delivery Cost</h2>
+
+    <p id="priceDetails" style="margin-bottom:20px;"></p>
+
+    <button id="finalConfirm" class="submit-btn">Confirm & Request Pickup</button>
+    <br><br>
+    <button onclick="closeModal()" style="background:#ccc; width:100%; padding:10px; border:none; border-radius:6px;">
+      Cancel
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
